@@ -45,7 +45,26 @@ surf_min_parcelle_batie = 2000
 
 # In[3]:
 #data = raw_input("Indiquez le chemin du dossier contenant les données : ")
-data = "C:/Users/Citadia/Desktop/DEV/foncier/data/"
+#data = "C:/Users/Citadia/Desktop/DEV/foncier/data/"
+
+#data = raw_input("Indiquez le chemin du dossier contenant les données : ")
+import os
+data = "C:/Users/remi_/foncier"
+
+def shapefile(pathname): ## fonction permettant de selectionner les fichier shape du dossier
+    donnee = []
+    for shape in os.listdir(pathname):
+        if shape.endswith('.shp'):
+            donnee.append(shape)
+        else:
+            pass
+    print(donnee) #il faudrait afficher la liste avec une fichier par ligne associé à un numéro (dictionnaire?)
+# shapefile(data)
+
+# data_parcelle = int(input("Indiquez le numero de la donnée correspondant aux parcelles (BD parcellaire, Cadastre DGFiP, ...) : "))
+# data_bati = int(input("Indiquez le numero de la donnée correspondant au Bâti : "))
+# data_filtre_excluant = int(input("Indiquez le ou les numéros des données correspondant aux filtres excluants : "))
+
 
 #parcelle = gpd.read_file(r"C:\Users\Citadia\Desktop\DEV\foncier\data\PARCELLE_region.shp")
 data_parcelle = data + "uf.shp"

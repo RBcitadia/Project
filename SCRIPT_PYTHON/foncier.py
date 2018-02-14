@@ -49,7 +49,7 @@ surf_min_parcelle_batie = 2000
 
 #data = raw_input("Indiquez le chemin du dossier contenant les données : ")
 #data = "C:/Users/Citadia/Desktop/DEV/foncier/data/"
-#data = raw_input("Indiquez le chemin du dossier contenant les données : ")
+
 import os
 data = "C:/Users/remi_/foncier"
 

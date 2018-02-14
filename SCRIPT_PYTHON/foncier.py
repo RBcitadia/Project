@@ -58,15 +58,24 @@ def shapefile(pathname): ## fonction permettant de selectionner les fichier shap
             donnee.append(shape)
         else:
             pass
-    print(donnee) #il faudrait afficher la liste avec une fichier par ligne associé à un numéro (dictionnaire?)
+    print(donnee) # Il faudrait compter le nombre de fichier shape 'n'
 # shapefile(data)
+# Créer une liste 'index' de n éléments
+dict_shp = {}
+y=0
+index = [1, 2, 3, 4, 5, 6]
+for x in index:
+    dict_shp[x] = donnée[y]
+    y = y + 1
+    print(dict_shp[y])
 
 # data_parcelle = int(input("Indiquez le numero de la donnée correspondant aux parcelles (BD parcellaire, Cadastre DGFiP, ...) : "))
 # data_bati = int(input("Indiquez le numero de la donnée correspondant au Bâti : "))
 # data_filtre_excluant = int(input("Indiquez le ou les numéros des données correspondant aux filtres excluants : "))
 
 
-#parcelle = gpd.read_file(r"C:\Users\Citadia\Desktop\DEV\foncier\data\PARCELLE_region.shp")
+##parcelle = gpd.read_file(r"C:\Users\Citadia\Desktop\DEV\foncier\data\PARCELLE_region.shp")
+# 
 data_parcelle = data + "uf.shp"
 parcelle = gpd.read_file(data_parcelle)
 

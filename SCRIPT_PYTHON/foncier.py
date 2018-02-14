@@ -44,31 +44,57 @@ surf_min_parcelle_batie = 2000
 # ### Import des données
 
 # In[3]:
+
+# ## Dossier de données utilisateur
+
 #data = raw_input("Indiquez le chemin du dossier contenant les données : ")
 #data = "C:/Users/Citadia/Desktop/DEV/foncier/data/"
-
 #data = raw_input("Indiquez le chemin du dossier contenant les données : ")
 import os
 data = "C:/Users/remi_/foncier"
 
-def shapefile(pathname): ## fonction permettant de selectionner les fichier shape du dossier
+def shapefile(pathname): ## fonction permettant de placer les fichiers shape du dossier dans la liste "donnee"
     donnee = []
     for shape in os.listdir(pathname):
         if shape.endswith('.shp'):
             donnee.append(shape)
         else:
             pass
-    print(donnee) # Il faudrait compter le nombre de fichier shape 'n'
-# shapefile(data)
-# Créer une liste 'index' de n éléments
-dict_shp = {}
-y=0
-index = [1, 2, 3, 4, 5, 6]
-for x in index:
-    dict_shp[x] = donnée[y]
+    print(donnee) 
+
+shapefile(data)    # Application de la fonction "shapefile" sur le dossier utilisateur
+
+# ## Etablissement d'un dictionnaire pour guider l'utilisateur dans le choix des données à utiliser
+
+index = [] # Création de la liste d'index du dictionnaire
+i = 1
+for shp in donnee: # Création d'une liste d'index pour le dictionnaire correspondant au nombre de fichier présent dans le dossier data utilisateur
+    index.append(y)
+    i = i + 1
+
+dict_shp = {} # Création du dictionnaire
+y = 0
+for x in index: # Association des listes "index" et "donnee" en dictionnaire
+    dict_shp[x] = donnee[y]
     y = y + 1
     print(dict_shp[y])
 
+# ## Paramétrage utilisateur
+
+'''from sys import version
+ 
+print("1.Zonage CNIG")
+print("2.Enveloppe urbaine")
+while 1:
+    reponse = input("Choisissez 1 ou 2: ")
+    if reponse in ['1', '2']:
+        break
+    else:
+        print ("Choix incorrect !")
+if reponse == 1 :
+    cadastre = zonage
+else: cadastre = enveloppe'''
+    
 # data_parcelle = int(input("Indiquez le numero de la donnée correspondant aux parcelles (BD parcellaire, Cadastre DGFiP, ...) : "))
 # data_bati = int(input("Indiquez le numero de la donnée correspondant au Bâti : "))
 # data_filtre_excluant = int(input("Indiquez le ou les numéros des données correspondant aux filtres excluants : "))
